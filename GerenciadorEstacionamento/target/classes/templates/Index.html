@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerenciador de Estabelecimentos</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Gerenciador de Estacionamentos</h1>
+		<a href="novo">Adicionar novo estacionamento</a>
+		</br>
+		<br>
+		<table border="1" cellpadding="5">
+			<thead>
+				<tr>
+					<th>Id Estacionamento</th>
+					<th>Nome</th>
+					<th>CNPJ</th>
+					<th>telefone</th>
+					<th>Qtd. vagas/carros</th>
+					<th>Qtd. vagas/motos</th>
+					<th>Opções</th>
+					<th>Mais</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr align="center" th:each="empresa: ${listaEmpresas}">
+					<td th:text="${empresa.id_empresa}"></td>
+					<td th:text="${empresa.nome}"></td>
+					<td th:text="${empresa.cnpj}"></td>
+					<td th:text="${empresa.telefone}"></td>
+					<td th:text="${empresa.qtd_carros}"></td>
+					<td th:text="${empresa.qtd_motos}"></td>
+					<td></td>
+					<td>
+						   <a th:href="@{'/editar/' + ${empresa.id_empresa}}">Editar</a> 
+						   &nbsp; &nbsp; &nbsp; &nbsp;  
+						   <a th:href="@{'/deletar/' + ${empresa.id_empresa}}">Deletar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
