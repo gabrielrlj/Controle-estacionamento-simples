@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerenciador de Estabelecimentos</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Veículos</h1>
+		</br>
+		<br>
+		<table border="1" cellpadding="5">
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Cor</th>
+					<th>Marca</th>
+					<th>Modelo</th>
+					<th>Placa</th>
+					<th>Tipo</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr align="center" th:each="veiculo: ${listaVeiculos}">
+					<td th:text="${veiculo.id_veiculo}"></td>
+					<td th:text="${veiculo.cor}"></td>
+					<td th:text="${veiculo.marca}"></td>
+					<td th:text="${veiculo.modelo}"></td>
+					<td th:text="${veiculo.placa}"></td>
+					<td th:text="${veiculo.tipo}"></td>
+					<td>
+						   <a th:href="@{'/editar/' + ${veiculo.id_veiculo}}">Editar</a> 
+						   &nbsp; &nbsp; &nbsp; &nbsp;  
+						   <a th:href="@{'/deletarVeiculo/' + ${veiculo.id_veiculo}}">Deletar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

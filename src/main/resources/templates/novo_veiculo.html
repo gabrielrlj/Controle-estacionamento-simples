@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Novo Veículo</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Adicionar novo veículo</h1>
+		<br />
+		<form action="#"
+			th:action="@{'/salvar_veiculo/' + ${empresa.id_empresa}}"
+			th:object="${veiculo}" method="get">
+			<table border="0" cellpadding="5">
+				<tr>
+					<td>Cor:</td>
+					<td><input type="text" th:field="*{cor}"></td>
+				</tr>
+				<tr>
+					<td>Marca:</td>
+					<td><input type="text" th:field="*{marca}"></td>
+				</tr>
+				<tr>
+					<td>Modelo:</td>
+					<td><input type="text" th:field="*{modelo}"></td>
+				</tr>
+				<tr>
+					<td>Placa:</td>
+					<td><input type="text" th:field="*{placa}"></td>
+				</tr>
+				<tr>
+					<td>Tipo:</td>
+					<td><select th:field="*{tipo}">
+							<option th:value="'CARRO'" th:text="Carro"></option>
+							<option th:value="'MOTO'" th:text="Moto"></option>
+					</select></td>
+				</tr>
+				<!--  <tr>
+					<td><input type="hidden" th:field="*{empresa}" th:value="${empresa.id_empresa}"></td>
+				</tr>-->
+				<tr>
+					<td colspan="2"><button onclick="myFunction()" type="submit">Salvar</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<script>
+		function myFunction() {
+		  alert("Veículo salvo com sucesso!");
+		}
+	</script>
+</body>
+</html>
