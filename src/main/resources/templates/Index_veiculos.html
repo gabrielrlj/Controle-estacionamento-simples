@@ -30,8 +30,6 @@
 					<td th:text="${veiculo.placa}"></td>
 					<td th:text="${veiculo.tipo}"></td>
 					<td>
-						   <a th:href="@{'/editar/' + ${veiculo.id_veiculo}}">Editar</a> 
-						   &nbsp; &nbsp; &nbsp; &nbsp;  
 						   <a th:href="@{'/deletarVeiculo/' + ${veiculo.id_veiculo}}">Deletar</a>
 					</td>
 				</tr>
