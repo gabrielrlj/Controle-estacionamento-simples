@@ -20,7 +20,7 @@ public class EmpresaController {
 	private EmpresaService service;
 	
 	
-	@RequestMapping("/home")
+	@RequestMapping("/")
 	public String ViewHomePage(Model model) {
 		List<Empresa> listaEmpresas = service.listAll();
 		model.addAttribute("listaEmpresas", listaEmpresas);
